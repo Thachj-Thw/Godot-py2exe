@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://interface/options.gd" type="Script" id=2]
+
+[node name="options" type="HBoxContainer"]
+anchor_right = 1.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_constants/separation = 70
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OneFile" type="CheckBox" parent="."]
+margin_right = 79.0
+margin_bottom = 24.0
+pressed = true
+text = "One file"
+
+[node name="Windowed" type="CheckBox" parent="."]
+margin_left = 149.0
+margin_right = 249.0
+margin_bottom = 24.0
+pressed = true
+text = "No console"
+
+[node name="Admin" type="CheckBox" parent="."]
+margin_left = 319.0
+margin_right = 479.0
+margin_bottom = 24.0
+pressed = true
+text = "Run as administrator"

@@ -1,0 +1,275 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://interface/input_path.tscn" type="PackedScene" id=1]
+[ext_resource path="res://interface/icon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://interface/input_name.tscn" type="PackedScene" id=3]
+[ext_resource path="res://interface/options.tscn" type="PackedScene" id=4]
+[ext_resource path="res://main.gd" type="Script" id=5]
+[ext_resource path="res://interface/AddData.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fail"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "FAIL", "Convert" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.792157, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:flat")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Successfully"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0156863, 0.772549, 0.0705882, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "SUCCESS", "Convert" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:flat")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 2.0
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Converting", "Converting.", "Converting..", "Converting..." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:flat")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.113725, 0.117647, 0.164706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -239.0
+margin_top = 15.0
+margin_right = 240.0
+margin_bottom = 552.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_right = 479.0
+
+[node name="Input" parent="VBoxContainer" instance=ExtResource( 1 )]
+anchor_left = 0.0
+anchor_right = 0.0
+margin_left = 0.0
+margin_top = 39.0
+margin_right = 479.0
+margin_bottom = 85.0
+text = "Input File"
+types = PoolStringArray( "*.py, *pyw ; Python FIle" )
+
+[node name="Output" parent="VBoxContainer" instance=ExtResource( 1 )]
+anchor_left = 0.0
+anchor_right = 0.0
+margin_left = 0.0
+margin_top = 100.0
+margin_right = 479.0
+margin_bottom = 146.0
+text = "Output Folder"
+mode = 1
+
+[node name="LabelOptions" type="Label" parent="VBoxContainer"]
+margin_top = 161.0
+margin_right = 479.0
+margin_bottom = 175.0
+text = "--------------------------------------Options--------------------------------------"
+align = 1
+
+[node name="Options" parent="VBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+margin_top = 190.0
+margin_right = 479.0
+margin_bottom = 214.0
+
+[node name="Icon" parent="VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 229.0
+margin_right = 479.0
+margin_bottom = 355.0
+
+[node name="AddData" parent="VBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+margin_top = 370.0
+margin_right = 479.0
+margin_bottom = 522.0
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+margin_top = 537.0
+margin_right = 479.0
+margin_bottom = 537.0
+
+[node name="Convert" type="Button" parent="VBoxContainer/Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -56.0
+margin_right = 56.0
+margin_bottom = 33.0
+custom_colors/font_color_disabled = Color( 0, 0.368627, 0.854902, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Convert"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Control/Convert"]
+anims/Fail = SubResource( 1 )
+anims/Successfully = SubResource( 2 )
+anims/convert = SubResource( 3 )
+
+[node name="Version" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -248.5
+margin_top = -23.1924
+margin_right = 248.5
+margin_bottom = -9.19238
+text = "PyInstaller not found"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="venv_change" from="VBoxContainer/Name" to="." method="_on_Name_venv_change"]
+[connection signal="path_selected" from="VBoxContainer/Input" to="." method="_on_Input_path_selected"]
+[connection signal="path_writing" from="VBoxContainer/Input" to="." method="_on_Input_path_writing"]
+[connection signal="pressed" from="VBoxContainer/Control/Convert" to="." method="_on_Convert_pressed"]

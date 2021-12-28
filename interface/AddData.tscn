@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://interface/AddData.gd" type="Script" id=1]
+
+[node name="AddData" type="VBoxContainer"]
+anchor_right = 1.0
+margin_bottom = 137.0
+custom_constants/separation = 6
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="HBoxContainer" parent="."]
+margin_right = 512.0
+margin_bottom = 14.0
+
+[node name="All" type="Label" parent="title"]
+margin_right = 254.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "All Data"
+align = 1
+
+[node name="Add" type="Label" parent="title"]
+margin_left = 258.0
+margin_right = 512.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Data Add"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 20.0
+margin_right = 512.0
+margin_bottom = 137.0
+size_flags_vertical = 3
+
+[node name="All" type="ItemList" parent="HBoxContainer"]
+margin_right = 238.0
+margin_bottom = 117.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+select_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+margin_left = 242.0
+margin_right = 270.0
+margin_bottom = 117.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CenterContainer"]
+margin_top = 36.0
+margin_right = 28.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="HBoxContainer/CenterContainer/VBoxContainer"]
+margin_right = 28.0
+margin_bottom = 20.0
+text = ">>"
+
+[node name="Button2" type="Button" parent="HBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 28.0
+margin_bottom = 44.0
+text = "<<"
+
+[node name="Add" type="ItemList" parent="HBoxContainer"]
+margin_left = 274.0
+margin_right = 512.0
+margin_bottom = 117.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+select_mode = 1
+
+[connection signal="pressed" from="HBoxContainer/CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer/CenterContainer/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]

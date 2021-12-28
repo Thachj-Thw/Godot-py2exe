@@ -1,0 +1,1 @@
+{"converter":"pyinstaller","name":"main","distpath":"D:/Godot/py to exe/test","script":"D:/python/app/Get cookie/main.py","icon":"DEFAULT","data":["images"],"options":["--onefile","--noconsole","--uac-admin"]}
